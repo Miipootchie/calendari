@@ -175,7 +175,7 @@ footer a:link {
 
 </body>
 <script>
-    var mois = [
+var mois = [
     'Janvier',
     'Février',
     'Mars',
@@ -200,7 +200,7 @@ var jours = [
     'Samedi'
 ];
 
-var Jours_abr = [
+var jours_abr = [
     'Dim',
     'Lun',
     'Mar',
@@ -262,7 +262,7 @@ function calendari(widget, data)
 
     titol.appendChild(boto_prev);
     titol.appendChild(document.createElement('span')).innerHTML = 
-        mesos[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
+        mois[data.getMonth()] + '<span class="any">' + data.getFullYear() + '</span>';
 
     titol.appendChild(boto_next);
 
@@ -283,10 +283,10 @@ function calendari(widget, data)
 
     for(var i = 1; i < 7; i++)
     {
-        fila.innerHTML += '<th>' + dies_abr[i] + '</th>';
+        fila.innerHTML += '<th>' + jours_abr[i] + '</th>';
     }
 
-    fila.innerHTML += '<th>' + dies_abr[0] + '</th>';
+    fila.innerHTML += '<th>' + jours_abr[0] + '</th>';
     e.appendChild(fila);
 
     /* Obtinc el dia que va acabar el mes anterior */
@@ -343,6 +343,8 @@ function calendari(widget, data)
     }, 1000);
 
 }
+
 calendari(document.getElementById('calendari'), new Date());
+
 </script>
 </html>
